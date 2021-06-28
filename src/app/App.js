@@ -28,5 +28,8 @@ const styles = createUseStyles({
     backgroundColor: "#282c34",
     height: "100vh",
     alignItems: "center",
+    "@media (max-width: 480px)": {
+      height: "unset",
+    },
   },
 });
