@@ -1,21 +1,38 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import BitcoinValueFinder from "../components/BitcoinValueFinder";
-import Controllers from "../components/Controllers";
 import Timer from "../components/Timer";
 import { useGameContext } from "../state/GameContext";
+import Button from "../components/Button";
 
 const Controls = () => {
   const classes = styles();
   const {
     state: { minedBitcoins },
+    dispatch,
   } = useGameContext();
+
+  const reset = () => {
+    dispatch("stop-game");
+    dispatch("reset");
+  };
 
   return (
     <div data-testid="controls" className={classes.root}>
       <div className={classes.flexContainer}>
         <div className={classes.flexItem}>
-          <Controllers />
+          <Button className={classes.btn} onClick={reset}>
+            RESET
+          </Button>
+          <Button
+            className={classes.btn}
+            onClick={() => dispatch("start-game")}
+          >
+            START
+          </Button>
+          <Button className={classes.btn} onClick={() => dispatch("stop-game")}>
+            STOP
+          </Button>
         </div>
         <div className={classes.flexItem}>
           <Timer />
@@ -44,12 +61,16 @@ const styles = createUseStyles({
   flexItem: {
     display: "flex",
     justifyContent: "center",
-    flexFlow: "row wrap",
+    flexFlow: "nowrap",
     width: "100%",
     color: "white",
     margin: "auto",
     "@media (max-width: 900px)": {
       flexDirection: "column",
     },
+  },
+  btn: {
+    margin: "8px 8px",
+    flexGrow: 1,
   },
 });

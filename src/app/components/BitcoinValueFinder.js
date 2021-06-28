@@ -16,7 +16,7 @@ const BitcoinValueFinder = ({ bitcoins }) => {
     fetchData();
     let interval = setInterval(() => fetchData(), 5000);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
