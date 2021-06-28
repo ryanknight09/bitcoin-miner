@@ -18,7 +18,7 @@ const GameBoard = () => {
   };
 
   return (
-    <main className={classes.main}>
+    <main data-testid="game-board" className={classes.main}>
       <div className={classes.container}>
         <Networks />
       </div>

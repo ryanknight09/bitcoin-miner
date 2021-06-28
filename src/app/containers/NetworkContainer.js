@@ -32,7 +32,7 @@ const NetworkContainer = () => {
   }, [isRunning, active]);
 
   return (
-    <div className={classes.sceneContainer}>
+    <div data-testid="network-container" className={classes.sceneContainer}>
       <ASICMiner />
       <Bitcoin active={active} handleCoinClick={handleCoinClick} />
     </div>

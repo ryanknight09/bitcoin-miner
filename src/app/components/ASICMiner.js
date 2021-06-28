@@ -6,6 +6,7 @@ const ASICMiner = () => {
 
   return (
     <img
+      data-testid="ASICMiner"
       className={classes.ASIC}
       src="https://freesvg.org/img/1408356989.png"
       alt="Bitcoin"

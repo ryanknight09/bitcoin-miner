@@ -24,7 +24,7 @@ const Timer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time, isRunning]);
 
-  return <h2 className={classes.time}>{`${time}`}</h2>;
+  return <h2 data-testid="timer" className={classes.time}>{`${time}`}</h2>;
 };
 
 export default Timer;

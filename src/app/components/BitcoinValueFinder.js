@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 const BitcoinValueFinder = ({ bitcoins }) => {
   const [data, setData] = useState(null);
 
@@ -12,6 +13,7 @@ const BitcoinValueFinder = ({ bitcoins }) => {
   };
 
   useEffect(() => {
+    fetchData();
     let interval = setInterval(() => fetchData(), 5000);
     return () => clearInterval(interval);
   });
@@ -29,7 +31,7 @@ const BitcoinValueFinder = ({ bitcoins }) => {
   const getCurrentBTCPrice = () => formatter.format(data.bpi.USD.rate_float);
 
   return (
-    <section>
+    <section data-testid="value-finder">
       <p>{`Bitcoins ${bitcoins}`}</p>
       <p>{`Value ${data ? getValue() : formatter.format(0)}`}</p>
       <p>{`BTC/USD ${data ? getCurrentBTCPrice() : "fetching latest..."}`}</p>

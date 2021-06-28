@@ -4,7 +4,7 @@ import { createUseStyles } from "react-jss";
 const Header = () => {
   const classes = styles();
   return (
-    <header>
+    <header data-testid="header">
       <h1 className={classes.h1}>
         The
         <br />

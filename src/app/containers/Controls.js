@@ -12,7 +12,7 @@ const Controls = () => {
   } = useGameContext();
 
   return (
-    <div className={classes.root}>
+    <div data-testid="controls" className={classes.root}>
       <div className={classes.flexContainer}>
         <div className={classes.flexItem}>
           <Controllers />

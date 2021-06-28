@@ -13,7 +13,7 @@ const Controllers = () => {
   };
 
   return (
-    <>
+    <div data-testid={"controllers"}>
       <Button className={classes.btn} onClick={reset}>
         RESET
       </Button>
@@ -23,7 +23,7 @@ const Controllers = () => {
       <Button className={classes.btn} onClick={() => dispatch("stop-game")}>
         STOP
       </Button>
-    </>
+    </div>
   );
 };
 
